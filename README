@@ -1,0 +1,10 @@
+A simple web application that includes maven plugins to create a keystore and implement ssl in tomcat.
+
+USAGE:
+mvn clean
+mvn package
+mvn tomcat7:run
+
+urls:
+    http://localhost:8080/resteasy-example
+    https://localhost:8443/resteasy-example
