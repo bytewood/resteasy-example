@@ -1,0 +1,3 @@
+	location /resteasy-server/ {
+		proxy_pass https://localhost:8443;
+	}

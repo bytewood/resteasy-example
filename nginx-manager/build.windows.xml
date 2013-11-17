@@ -1,0 +1,63 @@
+<project name="Nginx" default="download-extract-and-configure" basedir=".">
+    <description>
+        A build file to download configure and run nginx.
+    </description>
+
+    <property environment="env" />
+    <property file="./../build.properties" />
+
+    <property name="build.dir" location="target" />
+    <property name="nginx.url.path" value="http://nginx.org/download" />
+    <property name="nginx.archive" value="nginx-${nginx.version}.zip" />
+    <property name="nginx.url" value="${nginx.url.path}/${nginx.archive}" />
+    <property name="nginx.file" value="${user.home}/${nginx.archive}" />
+    <property name="client.dir" location="${nginx.folder}/html/amf-client" />
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+
+        <echo message="${nginx.url}" />
+        <echo message="${nginx.file}" />
+        <echo message="${nginx.folder}" />
+        <echo message="${build.dir}" />
+        <echo message="${user.home}" />
+
+        <condition property="nginx.file.exists">
+            <resourceexists>
+                <file file="${nginx.file}" />
+            </resourceexists>
+        </condition>
+
+        <condition property="nginx.folder.exists">
+            <resourceexists>
+                <file file="${nginx.folder}" />
+            </resourceexists>
+        </condition>
+
+        <echo message="nginx.file.exists=${nginx.file.exists}" />
+        <echo message="nginx.folder.exists=${nginx.folder.exists}" />
+    </target>
+
+    <target name="download" depends="init" unless="nginx.file.exists">
+        <get src="${nginx.url}" dest="${nginx.file}" />
+    </target>
+
+    <target name="download-and-extract" depends="download" unless="nginx.folder.exists">
+        <unzip src="${nginx.file}" dest="${build.dir}" />
+    </target>
+
+    <target name="download-extract-and-configure" depends="download-and-extract">
+        <copy todir="${nginx.folder}/conf" overwrite="true">
+            <fileset dir="src/main/nginx">
+                <include name="reverseproxy.*"/>
+                <include name="nginx.conf"/>
+                <include name="openssl.*"/>
+            </fileset>
+        </copy>
+        <replace file="${nginx.folder}/conf/reverseproxy.locations" token="AMF_CLIENT_FOLDER" value="${client.dir}" />
+
+        </replace>
+    </target>
+
+</project>
+
