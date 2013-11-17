@@ -1,3 +1,7 @@
 	location /resteasy-server/ {
+                sub_filter 'localhost' 'someserver';
+                sub_filter_once off;
+                sub_filter_last_modified off;
+                sub_filter_types 'application/json' 'application/xml';
 		proxy_pass https://localhost:8443;
 	}

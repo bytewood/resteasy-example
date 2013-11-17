@@ -15,7 +15,7 @@ public class EndpointTest {
 
     @Test
     public void testGetPerson() {
-        Thing person = testObject.getPerson();
+        Thing person = testObject.getThing("Person");
         Assert.assertNotNull(person);
     }
 
