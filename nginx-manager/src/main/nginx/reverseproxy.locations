@@ -1,5 +1,5 @@
 	location /resteasy-server/ {
-                sub_filter 'localhost' 'someserver';
+                sub_filter 'localhost:8443' 'localhost';
                 sub_filter_once off;
                 sub_filter_last_modified off;
                 sub_filter_types 'application/json' 'application/xml';
