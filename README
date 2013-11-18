@@ -3,7 +3,8 @@ A simple web application that includes maven plugins to create a keystore and im
 USAGE:
 mvn clean
 mvn package
-mvn tomcat7:run
+./run.sh (on linux)
+./run.bat (on windows)
 
 urls:
     https://localhost:8443/resteasy-server/resources/things
