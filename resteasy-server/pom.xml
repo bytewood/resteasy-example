@@ -141,6 +141,9 @@
 				<configuration>
 					<filesets>
 						<fileset>
+							<directory>logs</directory>
+						</fileset>
+						<fileset>
 							<directory>src/main/webapp/WEB-INF/lib</directory>
 						</fileset>
 						<fileset>

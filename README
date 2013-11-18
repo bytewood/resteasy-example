@@ -6,4 +6,6 @@ mvn package
 mvn tomcat7:run
 
 urls:
-    https://localhost:8080/resteasy-example/resources/things/persons
+    https://localhost:8443/resteasy-server/resources/things
+    https://localhost:8443/resteasy-server/resources/things/person
+

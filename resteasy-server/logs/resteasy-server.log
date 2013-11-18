@@ -1,4 +1,0 @@
-[localhost-startStop-1] WARN  org.jboss.resteasy.plugins.server.servlet.ConfigurationBootstrap  - The use of javax.ws.rs.core.Application is deprecated, please use javax.ws.rs.Application as a context-param instead
-[localhost-startStop-1] INFO  org.jboss.resteasy.spi.ResteasyDeployment  - Deploying javax.ws.rs.core.Application: class org.bytewood.viz.resteasy.ResteasyApplication
-[localhost-startStop-1] INFO  org.jboss.resteasy.spi.ResteasyDeployment  - Adding singleton resource org.bytewood.viz.resteasy.Endpoint from Application javax.ws.rs.core.Application
-[http-bio-8443-exec-2] DEBUG org.jboss.resteasy.core.SynchronousDispatcher  - PathInfo: /things/persons

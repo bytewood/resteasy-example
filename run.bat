@@ -11,8 +11,7 @@ call openssl.bat
 cd ..
 start nginx.exe
 
-
-"c:\Program Files\Internet Explorer\iexplore.exe" "https://localhost/amf-client/Main.html"
+"c:\Program Files\Internet Explorer\iexplore.exe" "http://localhost/resteasy-server/resources/things"
 
 pause
 

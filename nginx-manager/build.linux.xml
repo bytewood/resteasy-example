@@ -54,7 +54,6 @@
                 <include name="openssl.*"/>
             </fileset>
         </copy>
-        <replace file="${nginx.folder}/conf/reverseproxy.locations" token="AMF_CLIENT_FOLDER" value="${client.dir}" />
     </target>
 
 </project>

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!//sh
 cd resteasy-server
 xterm -hold -e "mvn tomcat7:run" &
 
@@ -8,7 +8,10 @@ chmod 777 *
 ./openssl.sh
 sudo nginx -c "$PWD/nginx.conf"
 
+x-www-browser "https://localhost/resteasy-server/resources/things"
+
 echo "Remember to stop nginx: sudo nginx -s stop"
+
 cd ..
 cd ..
 cd ..
