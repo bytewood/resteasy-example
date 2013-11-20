@@ -1,4 +1,4 @@
-Demonstates how the HttpSubModule of nginx can be used to rewrite atom links.
+Demonstates how the HttpSubModule of nginx can be used to rewrite atom links over an SSL channel.
 
 The project contains 2 modules.
 - A simple RESTFUL web services implemented using 
