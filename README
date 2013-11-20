@@ -1,4 +1,17 @@
-A simple web application that includes maven plugins to create a keystore and implement ssl in tomcat.
+Demonstates how the HttpSubModule of nginx can be used to rewrite atom links.
+
+The project contains 2 modules.
+- A simple RESTFUL web services implemented using 
+-- java 7
+-- resteasy 2.3.3
+-- running in Apache Tomcat 7.
+-- tomcat7-maven-plugin is used to run an embedded tomcat.
+-- keytool-maven-plugin is used to dynamically generate a self-signed ssl certificate and keystore.
+- A module to manage nginx by
+-- downloading an OS dependendant version of nginx
+-- creating a self-signed ssl certificate using openssl.
+-- containing customized configuration for the demo.
+ 
 
 USAGE:
 mvn clean
@@ -7,6 +20,6 @@ mvn package
 ./run.bat (on windows)
 
 urls:
-    https://localhost:8443/resteasy-server/resources/things
-    https://localhost:8443/resteasy-server/resources/things/person
+    https://localhost/resteasy-server/resources/things
+    https://localhost/resteasy-server/resources/things/person
 
